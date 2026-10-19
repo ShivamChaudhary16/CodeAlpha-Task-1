@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lumina Essentials — Modern Premium Store</title>
+  <meta name="description" content="Discover premium electronics, audio equipment, home goods, and everyday lifestyle essentials designed for modern living.">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-announcement">
+    <span class="badge-gold">Special Offer</span>
+    <span>Complimentary express delivery on all orders over $100 &bull; Use code <strong>CODEALPHA</strong> for 10% off</span>
+  </div>
+
+  <!-- Main Navigation -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="/index.html" class="logo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+          </svg>
+        </div>
+        <span>Lumina<span class="accent">Store</span></span>
+        <span class="tag">Alpha</span>
+      </a>
+
+      <!-- Search Input -->
+      <div class="nav-search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" id="navSearchInput" placeholder="Search curated products, gear, accessories..." />
+      </div>
+
+      <!-- Navigation Actions -->
+      <div class="nav-actions">
+        <a href="/index.html" class="nav-link active">Catalog</a>
+        <a href="/orders.html" class="nav-link">My Orders</a>
+
+        <!-- Auth Button / Dropdown Container -->
+        <div id="navAuthContainer">
+          <button type="button" class="btn btn-secondary btn-sm" id="btnOpenAuthModal">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            Sign In
+          </button>
+        </div>
+
+        <!-- Cart Button -->
+        <button type="button" class="btn-icon btn-open-cart" id="btnNavCart" title="Shopping Cart">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="cart-badge" style="display: none;">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container hero-content">
+      <div>
+        <div class="hero-tag">
+          <span>★</span> Spring Collection 2026
+        </div>
+        <h1 class="hero-title">
+          Curated Essentials For <span class="highlight">Exceptional Living</span>.
+        </h1>
+        <p class="hero-subtitle">
+          Engineered for precision, crafted with care. Explore hand-picked electronics, audiophile sound systems, and timeless everyday accessories.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="#catalog" class="btn btn-primary btn-lg">
+            Explore Collection
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+          <button type="button" class="btn btn-secondary btn-lg" onclick="document.getElementById('navSearchInput').focus()">
+            Quick Search
+          </button>
+        </div>
+
+        <div class="hero-badges">
+          <div class="hero-badge-item">
+            <div class="hero-badge-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="1" y="3" width="15" height="13"></rect>
+                <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                <circle cx="18.5" cy="18.5" r="2.5"></circle>
+              </svg>
+            </div>
+            <div class="hero-badge-text">
+              <strong>Free Express Shipping</strong>
+              <span>On orders over $100</span>
+            </div>
+          </div>
+          <div class="hero-badge-item">
+            <div class="hero-badge-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+            </div>
+            <div class="hero-badge-text">
+              <strong>2-Year Warranty</strong>
+              <span>100% Genuine Guarantee</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-banner-card">
+        <img class="hero-banner-img" src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&auto=format&fit=crop&q=80" alt="Featured Product Aura Wireless Headphones" />
+        <div class="hero-card-floating">
+          <div class="hero-card-info">
+            <h4>Aura Studio Wireless</h4>
+            <p>Active Noise Cancelling &bull; 45h Battery</p>
+          </div>
+          <div class="hero-card-price">$179.99</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Catalog Section -->
+  <main class="catalog-section" id="catalog">
+    <div class="container">
+      <!-- Filter Bar -->
+      <div class="filter-bar">
+        <div class="category-tabs" id="categoryTabs">
+          <button class="category-tab active" data-category="All">All Items</button>
+        </div>
+
+        <div class="filter-controls">
+          <span class="product-count-label" id="productCountLabel">Loading products...</span>
+          <select class="filter-select" id="sortSelect" aria-label="Sort products">
+            <option value="featured">Sort: Featured</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+            <option value="rating">Highest Rated</option>
+            <option value="name">Alphabetical (A-Z)</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Products Grid -->
+      <div class="products-grid" id="productsGrid">
+        <!-- Rendered via JS -->
+      </div>
+    </div>
+  </main>
+
+  <!-- Cart Slide-Over Drawer -->
+  <div class="cart-drawer-overlay" id="cartDrawerOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping Cart Drawer">
+    <div class="cart-drawer-header">
+      <h3>
+        Your Cart
+        <span class="count-badge" id="drawerCountHeader">0 items</span>
+      </h3>
+      <button type="button" class="btn-close-drawer" id="btnCloseDrawer" title="Close Cart">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Free Shipping Progress -->
+    <div class="cart-free-shipping-progress">
+      <div id="drawerShippingNotice">Free standard shipping on orders over <strong>$100.00</strong></div>
+      <div class="shipping-progress-bar">
+        <div class="shipping-progress-fill" id="drawerShippingProgress" style="width: 0%;"></div>
+      </div>
+    </div>
+
+    <!-- Cart Items List -->
+    <div class="cart-items-list" id="drawerCartItems">
+      <!-- Rendered dynamically -->
+    </div>
+
+    <!-- Empty State in Drawer -->
+    <div id="drawerEmptyState" style="display: none; padding: 40px 24px; text-align: center;">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="1.5" style="margin-bottom: 12px;">
+        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <path d="M16 10a4 4 0 0 1-8 0"></path>
+      </svg>
+      <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 6px;">Your cart is empty</h4>
+      <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 16px;">Explore our catalog and find items you love.</p>
+      <button class="btn btn-secondary btn-sm" onclick="Cart.closeDrawer()">Start Browsing</button>
+    </div>
+
+    <!-- Cart Footer & Checkout -->
+    <div class="cart-drawer-footer">
+      <div class="cart-summary-line">
+        <span>Subtotal</span>
+        <span id="drawerSubtotal">$0.00</span>
+      </div>
+      <div class="cart-summary-line">
+        <span>Estimated Shipping</span>
+        <span id="drawerShipping">FREE</span>
+      </div>
+      <div class="cart-summary-line total">
+        <span>Total</span>
+        <span id="drawerTotal">$0.00</span>
+      </div>
+      <a href="/checkout.html" class="btn btn-primary btn-block btn-lg" id="drawerCheckoutBtn">
+        Proceed to Checkout
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+    </div>
+  </aside>
+
+  <!-- Auth Modal (Login / Register) -->
+  <div class="modal-overlay" id="authModalOverlay">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="authModalTitle">Welcome to Lumina</h3>
+        <button type="button" class="btn-close-modal" id="btnCloseAuthModal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="auth-tabs">
+          <div class="auth-tab active" id="tabLogin">Sign In</div>
+          <div class="auth-tab" id="tabRegister">Create Account</div>
+        </div>
+
+        <!-- 1-Click Demo Account Quick Fill -->
+        <div class="demo-account-box">
+          <div>
+            <strong>Quick Demo Account:</strong><br/>
+            <code>demo@store.com</code> &bull; <code>password123</code>
+          </div>
+          <button type="button" class="btn btn-secondary btn-sm" id="btnFillDemo">Auto-fill</button>
+        </div>
+
+        <!-- Login Form -->
+        <form id="formLogin">
+          <div class="form-group">
+            <label for="loginEmail">Email Address</label>
+            <input type="email" id="loginEmail" class="form-control" placeholder="name@example.com" required />
+          </div>
+          <div class="form-group">
+            <label for="loginPassword">Password</label>
+            <input type="password" id="loginPassword" class="form-control" placeholder="••••••••" required />
+          </div>
+          <button type="submit" class="btn btn-primary btn-block btn-lg" style="margin-top: 10px;">Sign In</button>
+        </form>
+
+        <!-- Register Form -->
+        <form id="formRegister" style="display: none;">
+          <div class="form-group">
+            <label for="regName">Full Name</label>
+            <input type="text" id="regName" class="form-control" placeholder="Shivam Chaudhary" required />
+          </div>
+          <div class="form-group">
+            <label for="regEmail">Email Address</label>
+            <input type="email" id="regEmail" class="form-control" placeholder="name@example.com" required />
+          </div>
+          <div class="form-group">
+            <label for="regPassword">Password (6+ characters)</label>
+            <input type="password" id="regPassword" class="form-control" placeholder="••••••••" required minlength="6" />
+          </div>
+          <button type="submit" class="btn btn-primary btn-block btn-lg" style="margin-top: 10px;">Create Account</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quick View Modal -->
+  <div class="modal-overlay" id="quickViewModalOverlay">
+    <div class="modal-card" style="max-width: 680px;">
+      <div class="modal-header">
+        <h3>Product Preview</h3>
+        <button type="button" class="btn-close-modal" id="btnCloseQuickView">&times;</button>
+      </div>
+      <div class="modal-body" id="quickViewContent">
+        <!-- Rendered dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="/index.html" class="logo">
+          <div class="logo-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+          </div>
+          <span>Lumina<span class="accent">Store</span></span>
+        </a>
+        <p>A clean, refined e-commerce experience crafted with modern standards, designed for seamless shopping and delightful utility.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Catalog</h4>
+        <ul>
+          <li><a href="/index.html">Audio Gear</a></li>
+          <li><a href="/index.html">Electronics</a></li>
+          <li><a href="/index.html">Accessories</a></li>
+          <li><a href="/index.html">Home & Living</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Customer Care</h4>
+        <ul>
+          <li><a href="/orders.html">Track My Order</a></li>
+          <li><a href="/checkout.html">Checkout</a></li>
+          <li><a href="#catalog">Free Shipping Info</a></li>
+          <li><a href="#catalog">Returns & Warranty</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>About Task 1</h4>
+        <ul>
+          <li><a href="#">CodeAlpha Web Internship</a></li>
+          <li><a href="#">Node & Express Backend</a></li>
+          <li><a href="#">SQLite Database</a></li>
+          <li><a href="#">Semantic HTML/CSS/JS</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <div>&copy; 2026 Lumina Essentials Store &bull; CodeAlpha Task 1 Internship Submission</div>
+      <div style="display: flex; gap: 16px;">
+        <span>Theme: Pristine White & Deep Charcoal</span>
+        <span>Accent: Slate Blue (#4F46E5)</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="/js/api.js"></script>
+  <script src="/js/cart.js"></script>
+  <script src="/js/auth.js"></script>
+  <script src="/js/main.js"></script>
+</body>
+</html>

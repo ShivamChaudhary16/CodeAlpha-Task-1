@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout & Order Processing — Lumina Store</title>
+  <meta name="description" content="Secure order processing, shipping details, and instant order confirmation.">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-announcement">
+    <span class="badge-gold">Guaranteed Safe Checkout</span>
+    <span>256-Bit SSL Encryption &bull; Fast and Secure Order Processing</span>
+  </div>
+
+  <!-- Main Navigation -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="/index.html" class="logo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+          </svg>
+        </div>
+        <span>Lumina<span class="accent">Store</span></span>
+      </a>
+
+      <!-- Navigation Actions -->
+      <div class="nav-actions">
+        <a href="/index.html" class="nav-link">Return to Shop</a>
+        <a href="/orders.html" class="nav-link">My Orders</a>
+
+        <!-- Auth Button / Dropdown Container -->
+        <div id="navAuthContainer">
+          <button type="button" class="btn btn-secondary btn-sm" id="btnOpenAuthModal">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            Sign In
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Checkout Main Section -->
+  <main class="checkout-section" id="checkoutMainSection">
+    <div class="container">
+      <h1 style="font-size: 2rem; font-weight: 800; margin-bottom: 24px;">Order Checkout</h1>
+
+      <div class="checkout-grid">
+        <!-- Left: Form -->
+        <div>
+          <form id="checkoutForm">
+            <!-- Contact & Shipping Details Card -->
+            <div class="checkout-card">
+              <h2 class="checkout-card-title">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent-cta)" stroke-width="2">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+                1. Customer & Shipping Details
+              </h2>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="custName">Full Name *</label>
+                  <input type="text" id="custName" class="form-control" placeholder="Shivam Chaudhary" required />
+                </div>
+                <div class="form-group">
+                  <label for="custEmail">Email Address (for order receipt) *</label>
+                  <input type="email" id="custEmail" class="form-control" placeholder="shivam@example.com" required />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="custAddress">Street Address *</label>
+                <input type="text" id="custAddress" class="form-control" placeholder="124 Silicon Avenue, Suite 400" required />
+              </div>
+
+              <div class="form-row-3">
+                <div class="form-group">
+                  <label for="custCity">City *</label>
+                  <input type="text" id="custCity" class="form-control" placeholder="San Francisco" required />
+                </div>
+                <div class="form-group">
+                  <label for="custState">State / Region *</label>
+                  <input type="text" id="custState" class="form-control" placeholder="CA" required />
+                </div>
+                <div class="form-group">
+                  <label for="custZip">Postal / ZIP Code *</label>
+                  <input type="text" id="custZip" class="form-control" placeholder="94107" required />
+                </div>
+              </div>
+            </div>
+
+            <!-- Payment Method Card -->
+            <div class="checkout-card">
+              <h2 class="checkout-card-title">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent-cta)" stroke-width="2">
+                  <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                  <line x1="1" y1="10" x2="23" y2="10"></line>
+                </svg>
+                2. Select Payment Method
+              </h2>
+
+              <div class="payment-methods-grid">
+                <label class="payment-method-card selected" data-method="card">
+                  <input type="radio" name="paymentMethod" value="Credit Card" checked />
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="5" width="20" height="14" rx="2"></rect>
+                    <line x1="2" y1="10" x2="22" y2="10"></line>
+                  </svg>
+                  <div class="payment-method-title">Credit / Debit</div>
+                </label>
+
+                <label class="payment-method-card" data-method="paypal">
+                  <input type="radio" name="paymentMethod" value="PayPal" />
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M10 15h4a3 3 0 0 0 0-6h-4v10"></path>
+                  </svg>
+                  <div class="payment-method-title">PayPal Express</div>
+                </label>
+
+                <label class="payment-method-card" data-method="cod">
+                  <input type="radio" name="paymentMethod" value="Cash on Delivery" />
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="12" y1="1" x2="12" y2="23"></line>
+                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                  </svg>
+                  <div class="payment-method-title">Pay on Delivery</div>
+                </label>
+              </div>
+
+              <!-- Credit Card Input Simulation -->
+              <div id="creditCardInputs">
+                <div class="form-group">
+                  <label for="cardNumber">Card Number</label>
+                  <input type="text" id="cardNumber" class="form-control" placeholder="4532 &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; 8920" value="4532 •••• •••• 8920" />
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="cardExpiry">Expiration Date</label>
+                    <input type="text" id="cardExpiry" class="form-control" placeholder="MM/YY" value="08/28" />
+                  </div>
+                  <div class="form-group">
+                    <label for="cardCvc">Security CVC</label>
+                    <input type="text" id="cardCvc" class="form-control" placeholder="123" value="382" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary btn-block btn-lg" id="btnPlaceOrder">
+              Place Order Now
+            </button>
+          </form>
+        </div>
+
+        <!-- Right: Live Order Summary -->
+        <div>
+          <div class="order-summary-box">
+            <h3>Order Summary</h3>
+
+            <div class="summary-items-list" id="checkoutSummaryItems">
+              <!-- Rendered via JS -->
+            </div>
+
+            <!-- Promo Code Input -->
+            <div style="display: flex; gap: 8px; margin-bottom: 20px;">
+              <input type="text" id="inputPromoCode" class="form-control" placeholder="Promo code (e.g. CODEALPHA)" />
+              <button type="button" class="btn btn-secondary btn-sm" id="btnApplyPromo">Apply</button>
+            </div>
+
+            <div class="cart-summary-line">
+              <span>Subtotal</span>
+              <span id="checkoutSubtotal">$0.00</span>
+            </div>
+            <div class="cart-summary-line" id="checkoutDiscountRow" style="display: none; color: #059669; font-weight: 600;">
+              <span>Promo Discount</span>
+              <span id="checkoutDiscountVal">-$0.00</span>
+            </div>
+            <div class="cart-summary-line">
+              <span>Shipping</span>
+              <span id="checkoutShipping">FREE</span>
+            </div>
+            <div class="cart-summary-line">
+              <span>Estimated Tax (8%)</span>
+              <span id="checkoutTax">$0.00</span>
+            </div>
+            <div class="cart-summary-line total">
+              <span>Final Total</span>
+              <span id="checkoutTotal" style="color: var(--accent-cta); font-size: 1.35rem;">$0.00</span>
+            </div>
+
+            <div style="margin-top: 16px; font-size: 0.78rem; color: var(--text-secondary); text-align: center;">
+              🔒 Encrypted transactions &bull; 30-day money back guarantee
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Confirmation View (Shown dynamically after placing order) -->
+  <section class="checkout-section" id="orderConfirmationSection" style="display: none;">
+    <div class="container" style="max-width: 640px;">
+      <div class="checkout-card confirmation-card">
+        <div class="confirmation-icon-circle">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+        </div>
+        <h2 style="font-size: 1.8rem; font-weight: 800; margin-bottom: 8px;">Order Confirmed!</h2>
+        <p style="color: var(--text-secondary); font-size: 0.95rem;">
+          Thank you for your purchase. We have received your order and will dispatch it shortly.
+        </p>
+
+        <div class="order-id-badge" id="confOrderNumber">ORD-XXXXXXXX</div>
+
+        <div style="background-color: var(--bg-secondary); border-radius: var(--radius-md); padding: 18px; text-align: left; margin-bottom: 24px;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 0.88rem;">
+            <span style="color: var(--text-secondary);">Confirmation sent to:</span>
+            <strong id="confCustomerEmail">user@example.com</strong>
+          </div>
+          <div style="display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 0.88rem;">
+            <span style="color: var(--text-secondary);">Total Paid:</span>
+            <strong id="confOrderTotal" style="color: var(--accent-cta); font-size: 1.05rem;">$0.00</strong>
+          </div>
+          <div style="display: flex; justify-content: space-between; font-size: 0.88rem;">
+            <span style="color: var(--text-secondary);">Estimated Delivery:</span>
+            <strong>2-4 Business Days</strong>
+          </div>
+        </div>
+
+        <h4 style="font-size: 0.95rem; font-weight: 700; text-align: left; margin-bottom: 12px;">Items Ordered</h4>
+        <div id="confOrderItems" style="text-align: left; margin-bottom: 28px;">
+          <!-- Rendered via JS -->
+        </div>
+
+        <div style="display: flex; gap: 12px; justify-content: center;">
+          <a href="/orders.html" class="btn btn-secondary">View Order History</a>
+          <a href="/index.html" class="btn btn-primary">Continue Shopping</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Auth Modal -->
+  <div class="modal-overlay" id="authModalOverlay">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="authModalTitle">Welcome to Lumina</h3>
+        <button type="button" class="btn-close-modal" id="btnCloseAuthModal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="auth-tabs">
+          <div class="auth-tab active" id="tabLogin">Sign In</div>
+          <div class="auth-tab" id="tabRegister">Create Account</div>
+        </div>
+
+        <div class="demo-account-box">
+          <div>
+            <strong>Quick Demo Account:</strong><br/>
+            <code>demo@store.com</code> &bull; <code>password123</code>
+          </div>
+          <button type="button" class="btn btn-secondary btn-sm" id="btnFillDemo">Auto-fill</button>
+        </div>
+
+        <form id="formLogin">
+          <div class="form-group">
+            <label for="loginEmail">Email Address</label>
+            <input type="email" id="loginEmail" class="form-control" placeholder="name@example.com" required />
+          </div>
+          <div class="form-group">
+            <label for="loginPassword">Password</label>
+            <input type="password" id="loginPassword" class="form-control" placeholder="••••••••" required />
+          </div>
+          <button type="submit" class="btn btn-primary btn-block btn-lg" style="margin-top: 10px;">Sign In</button>
+        </form>
+
+        <form id="formRegister" style="display: none;">
+          <div class="form-group">
+            <label for="regName">Full Name</label>
+            <input type="text" id="regName" class="form-control" placeholder="Shivam Chaudhary" required />
+          </div>
+          <div class="form-group">
+            <label for="regEmail">Email Address</label>
+            <input type="email" id="regEmail" class="form-control" placeholder="name@example.com" required />
+          </div>
+          <div class="form-group">
+            <label for="regPassword">Password (6+ characters)</label>
+            <input type="password" id="regPassword" class="form-control" placeholder="••••••••" required minlength="6" />
+          </div>
+          <button type="submit" class="btn btn-primary btn-block btn-lg" style="margin-top: 10px;">Create Account</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-bottom">
+      <div>&copy; 2026 Lumina Essentials Store &bull; Secure Checkout</div>
+      <div style="display: flex; gap: 16px;">
+        <a href="/index.html">Return to Shop</a>
+        <a href="/orders.html">Track Orders</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="/js/api.js"></script>
+  <script src="/js/cart.js"></script>
+  <script src="/js/auth.js"></script>
+  <script src="/js/checkout.js"></script>
+</body>
+</html>
